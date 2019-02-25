@@ -58,15 +58,16 @@ for c=2:3                          % Loop over the two chrominance components
 
   % If you're using chrominance subsampling, this is where the
   % signal should be upsampled, after the inverse transform.
-
+   
+  
   imyr(:,:,c) = tmp;
   
 end
 
 % Display total number of bits and bits per pixel
-bits
-bpp = bits/(size(im,1)*size(im,2))
 
+bpp = bits/(size(im,1)*size(im,2));
+fprintf('bpp: %f\n',bpp);
 % Revert to RGB colour space again.
 imr=ycbcr2rgb(imyr);
 
